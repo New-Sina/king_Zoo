@@ -40,4 +40,4 @@ jobs:
                   TG_USER_ID: ${{ secrets.TG_USER_ID }}
                   EFORK: ${{ secrets.EFORK }}
                   GITHUB: ${{ secrets.GITHUB }}
-                  
+                  HELPURL: ${{ secrets.HELPURL }}
