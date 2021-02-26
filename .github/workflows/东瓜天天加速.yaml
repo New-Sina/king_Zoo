@@ -4,40 +4,46 @@
 name: 东瓜天天加速
 
 on:
-  workflow_dispatch:
-  schedule:
-    - cron: '0 */8 * * *'
-  watch:
-    types: started
-  repository_dispatch:
-    types: jd_job
+    # push:
+    #     branches:
+    #         - main
+    schedule:
+        - cron: "10 0-23/3 * * *"
+    workflow_dispatch:
 
 jobs:
   build:
+    env:
+      JD_COOKIE: ${{ secrets.JD_COOKIE }}
     runs-on: ubuntu-latest
     if: github.event.repository.owner.id == github.event.sender.id
     steps:
       - name: Checkout
-      run: |
+        if: env.JD_COOKIE
+        run: |
           git clone https://github.com/New-Sina/king_Zoo.git ~/king_Zoo
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
+        if: env.JD_COOKIE
         with:
           node-version: ${{ matrix.node-version }}
       - name: Cache node_modules
-      uses: actions/cache@v2 # 使用 GitHub 官方的缓存 Action。
+        if: env.JD_COOKIE
+        uses: actions/cache@v2 # 使用 GitHub 官方的缓存 Action。
         env:
           cache-name: cache-node-modules
         with:
           path: node_modules
           key: ${{ runner.os }}-${{ env.cache-name }}-${{ hashFiles('package-lock.json') }} # 使用 package-lock.json 的 Hash 作为缓存的 key。也可以使用 package.json 代替
       - name: npm install
-      run: |
+        if: env.JD_COOKIE
+        run: |
           cd ~/king_Zoo
           git checkout Yml
           npm install
-      - name: "运行 【东瓜天天加速】"
-      run: |
+      - name: '运行 【东瓜天天加速】'
+        run: |
+          cd ~/king_Zoo
           node Ponysitters_Club_Season.js
         env:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
@@ -49,9 +55,3 @@ jobs:
           TG_USER_ID: ${{ secrets.TG_USER_ID }}
           EFORK: ${{ secrets.EFORK }}
           GITHUB: ${{ secrets.GITHUB }}
-      
-      
-      
-      
-      
-      
