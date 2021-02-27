@@ -3,8 +3,7 @@ name: WoWo_notice
 on:
   schedule:
     - cron: '*/30 * * * * '
-  watch:
-    types: [started]
+  workflow_dispatch:
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -18,10 +17,10 @@ jobs:
           python-version: 3.7
          
       - name: 'Install requirements'
-        run: pip install -r ./Wowonaitang/requirements.txt 
+        run: pip install -r ./-/C.TXT 
         
       - name: '公众号iosrule' 
-        run: python3 ./Wowonaitang/Wowo_notice.py
+        run: python3 ./-/Wowo_notice.py
         env:
             DJJ_BARK_COOKIE: ${{ secrets.DJJ_BARK_COOKIE }}
             DJJ_SEVER_JIANG: ${{ secrets.DJJ_SEVER_JIANG }}
