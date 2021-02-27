@@ -1,10 +1,9 @@
-name: WoWo_main
+name: AA_WoWo_main
 
 on:
   schedule:
     - cron: '5 14,16,0,4,8,10,12 * * * '
-  watch:
-    types: [started]
+  workflow_dispatch:
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -18,13 +17,12 @@ jobs:
           python-version: 3.7
          
       - name: 'Install requirements'
-        run: pip install -r ./Wowonaitang/requirements.txt 
+        run: pip install -r ./-/C.TXT
         
       - name: '公众号iosrule' 
-        run: python3 ./Wowonaitang/Wowo_main.py
+        run: python3 ./-/Wowo_main.py
         env:
             DJJ_BARK_COOKIE: ${{ secrets.DJJ_BARK_COOKIE }}
-            DJJ_SEVER_JIANG: ${{ secrets.DJJ_SEVER_JIANG }}
             DJJ_TELE_COOKIE: ${{ secrets.DJJ_TELE_COOKIE }}
             wowo_naitang_urlm0: ${{ secrets.wowo_naitang_urlm0 }}
             wowo_naitang_ckm0: ${{ secrets.wowo_naitang_ckm0 }}
