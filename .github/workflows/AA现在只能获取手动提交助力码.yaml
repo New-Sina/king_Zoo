@@ -17,8 +17,8 @@ on:
     # push:
     #     branches:
     #         - main
-    schedule:
-        - cron: "30 16,17 1,8,16,24 * *"
+    #schedule:
+        #- cron: "30 16,17 1,8,16,24 * *"
     workflow_dispatch:
 jobs:
     build:
@@ -33,7 +33,6 @@ jobs:
             - name: npm install
               run: |
                   npm install
-                  npm install --save axios
             - name: "运行 【现在只能获取手动提交助力码】"
               run: |
                   #node Ponysitters_Club_Season.js
@@ -41,11 +40,6 @@ jobs:
               env:
                   JD_COOKIE: ${{ secrets.JD_COOKIE }}
                   SYNCURL: /The.Flash/The.Flash/jd_get_share_code.js
-                  SCKEY: ${{ secrets.SCKEY }}
-                  BARK_PUSH: ${{ secrets.BARK_PUSH }}
-                  PUSH_KEY: ${{ secrets.PUSH_KEY }}
-                  TG_BOT_TOKEN: ${{ secrets.TG_BOT_TOKEN }}
-                  TG_USER_ID: ${{ secrets.TG_USER_ID }}
                   EFORK: ${{ secrets.EFORK }}
                   GITHUB: ${{ secrets.GITHUB }}
                   
