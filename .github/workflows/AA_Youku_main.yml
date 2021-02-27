@@ -1,10 +1,9 @@
-name: Youku_main
+name: AA_Youku_main
 
 on:
   schedule:
     - cron: '*/30 * * * * '
-  watch:
-    types: [started]
+  workflow_dispatch:
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -18,13 +17,14 @@ jobs:
           python-version: 3.7
          
       - name: 'Install requirements'
-        run: pip install -r ./Youku/requirements.txt 
+        run: pip install -r ./-/C.TXT
         
       - name: '电影AV' 
-        run: python3 ./Youku/Youku_main.py 
+        run: python3 ./-/Youku_main.py 
         env:
             DJJ_BARK_COOKIE: ${{ secrets.DJJ_BARK_COOKIE }}
-            DJJ_SEVER_JIANG: ${{ secrets.DJJ_SEVER_JIANG }}
+            TG_BOT_TOKEN: ${{ secrets.TG_BOT_TOKEN }}
+            TG_USER_ID: ${{ secrets.TG_USER_ID }}
             sam_url: ${{ secrets.sam_url }}
             sam_headers: ${{ secrets.sam_headers }}
             sam_body0: ${{ secrets.sam_body0 }}
