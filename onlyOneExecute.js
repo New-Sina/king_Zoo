@@ -33,5 +33,3 @@ async function start() {
 }
 
 start();
-ble=true
-
