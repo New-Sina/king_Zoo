@@ -61,6 +61,12 @@ def check():
 
    global xmly_speed_cookie
    global xmly_bark_cookie
+   global TG_BOT_TOKEN
+   global TG_USER_ID
+   if "TG_USER_ID" in os.environ:
+     TG_USER_ID = os.environ["TG_USER_ID"]
+   if "TG_BOT_TOKEN" in os.environ:
+      TG_BOT_TOKEN = os.environ["TG_BOT_TOKEN"]
    if "XMLY_BARK_COOKIE" in os.environ:
      xmly_bark_cookie = os.environ["XMLY_BARK_COOKIE"]
    if "XMLY_SPEED_COOKIE" in os.environ:
