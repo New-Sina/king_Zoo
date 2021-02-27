@@ -195,8 +195,8 @@ st=st.replace(fn1,"*****");
   }
 
 if (st[i]==("账"))
-{fn1=st.substr(i+2,10);
-st=st.replace(fn1,"*****");}
+{fn1=st.substr(i+2,15);
+st=st.replace(fn1,"************");}
 
 if (st[i]==("京"))
 {fn1=st.substr(i,1);
