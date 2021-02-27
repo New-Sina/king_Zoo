@@ -1,10 +1,9 @@
-name: Douyin_main
+name: AA_Douyin_main
 
 on:
   schedule:
     - cron: '*/30 * * * * '
-  watch:
-    types: [started]
+  workflow_dispatch:
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -18,10 +17,10 @@ jobs:
           python-version: 3.7
          
       - name: 'Install requirements'
-        run: pip install -r ./Douyin/requirements.txt 
+        run: pip install -r ./-/C.TXT
         
       - name: '公众号iosrule' 
-        run: python3 ./Douyin/Douyin_main.py 
+        run: python3 ./-/Douyin_main.py 
         env:
             douyin_urlm: ${{ secrets.douyin_urlm }}
             douyin_tk: ${{ secrets.douyin_tk }}
