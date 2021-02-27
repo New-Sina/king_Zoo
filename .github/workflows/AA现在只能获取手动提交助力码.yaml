@@ -18,8 +18,7 @@ on:
     #     branches:
     #         - main
     schedule:
-        - cron: "1 16 1,8,16,24 * *"
-         
+        - cron: "30 16,17 1,8,16,24 * *"
     workflow_dispatch:
 jobs:
     build:
