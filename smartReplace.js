@@ -244,4 +244,4 @@ async function download(url, path, target) {
 module.exports = {
     inject: init,
 };
-© 2021 GitHub, Inc.
+
