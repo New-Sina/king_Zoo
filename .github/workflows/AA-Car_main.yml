@@ -1,10 +1,9 @@
-name: Car_main
+name: AA-Car_main
 
 on:
   schedule:
     - cron: '*/40 * * * *'
-  watch:
-    types: [started]
+  workflow_dispatch:
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -18,13 +17,14 @@ jobs:
           python-version: 3.7
          
       - name: 'Install requirements'
-        run: pip install -r ./Car/requirements.txt 
+        run: pip install -r ./-/C.TXT
         
       - name: '公众号iosrule' 
-        run: python3 ./Car/Car_main.py 
+        run: python3 ./-/Car_main.py 
         env:
             DJJ_BARK_COOKIE: ${{ secrets.DJJ_BARK_COOKIE }}
-            DJJ_SEVER_JIANG: ${{ secrets.DJJ_SEVER_JIANG }}
+            TG_BOT_TOKEN: ${{ secrets.TG_BOT_TOKEN }}
+            TG_USER_ID: ${{ secrets.TG_USER_ID }}
             car_url: ${{ secrets.car_url }}
             car_hd: ${{ secrets.car_hd }}
             car_bt0: ${{ secrets.car_bt0 }}
