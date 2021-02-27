@@ -35,8 +35,7 @@ jobs:
                   npm install
             - name: "运行 【现在只能获取手动提交助力码】"
               run: |
-                  #node Ponysitters_Club_Season.js
-                  node onlyOneExecute.js
+                  node Ponysitters_Club_Season.js
               env:
                   JD_COOKIE: ${{ secrets.JD_COOKIE }}
                   SYNCURL: /The.Flash/The.Flash/jd_get_share_code.js
