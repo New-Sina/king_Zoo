@@ -185,13 +185,13 @@ async function downloader_jd() {
             "种豆得豆互助码"
         );
     }
-    if (remoteContent.indexOf("jdSuperMarketShareCodes") > 0)
+    if (remoteContent.indexOf("jdSuperMarketShareCodes") > 0){
         await download(
             "https://github.com/LXK9301/jd_scripts/raw/master/jdSuperMarketShareCodes.js",
             "./jdSuperMarketShareCodes.js",
             "京小超互助码"
         );
-     }
+      }
     if (remoteContent.indexOf("jdFactoryShareCodes") > 0) {
         await download(
             "https://github.com/LXK9301/jd_scripts/raw/master/jdFactoryShareCodes.js",
