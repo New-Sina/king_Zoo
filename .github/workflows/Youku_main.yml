@@ -1,0 +1,39 @@
+name: Youku_main
+
+on:
+  schedule:
+    - cron: '*/30 * * * * '
+  watch:
+    types: [started]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        
+      - name: 'Set up Python'
+        uses: actions/setup-python@v1
+        with:
+          python-version: 3.7
+         
+      - name: 'Install requirements'
+        run: pip install -r ./Youku/requirements.txt 
+        
+      - name: '电影AV' 
+        run: python3 ./Youku/Youku_main.py 
+        env:
+            DJJ_BARK_COOKIE: ${{ secrets.DJJ_BARK_COOKIE }}
+            DJJ_SEVER_JIANG: ${{ secrets.DJJ_SEVER_JIANG }}
+            sam_url: ${{ secrets.sam_url }}
+            sam_headers: ${{ secrets.sam_headers }}
+            sam_body0: ${{ secrets.sam_body0 }}
+            sam_body1: ${{ secrets.sam_body1 }}
+            sam_body2: ${{ secrets.sam_body2 }}
+            sam_body3: ${{ secrets.sam_body3 }}
+            sam_body4: ${{ secrets.sam_body4 }}
+            sam_body5: ${{ secrets.sam_body5 }}
+            sam_body6: ${{ secrets.sam_body6 }}
+            sam_body7: ${{ secrets.sam_body7 }}
+            sam_body8: ${{ secrets.sam_body8 }}
+            sam_body9: ${{ secrets.sam_body9 }}

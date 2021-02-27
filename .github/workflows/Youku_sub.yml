@@ -1,0 +1,36 @@
+name: Youku_sub
+
+on:
+  schedule:
+    - cron: '*/30 * * * * '
+  watch:
+    types: [started]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        
+      - name: 'Set up Python'
+        uses: actions/setup-python@v1
+        with:
+          python-version: 3.7
+         
+      - name: 'Install requirements'
+        run: pip install -r ./Youku/requirements.txt 
+        
+      - name: '电影AV' 
+        run: python3 ./Youku/Youku_sub.py 
+        env:
+            sam_newurl: ${{ secrets.sam_newurl }}
+            sam_newheader0: ${{ secrets.sam_newheader0 }}
+            sam_newheader1: ${{ secrets.sam_newheader1 }}
+            sam_newheader2: ${{ secrets.sam_newheader2 }}
+            sam_newheader3: ${{ secrets.sam_newheader3 }}
+            sam_newheader4: ${{ secrets.sam_newheader4 }}
+            sam_newheader5: ${{ secrets.sam_newheader5 }}
+            sam_newheader6: ${{ secrets.sam_newheader6 }}
+            sam_newheader7: ${{ secrets.sam_newheader7 }}
+            sam_newheader8: ${{ secrets.sam_newheader8 }}
+            sam_newheader9: ${{ secrets.sam_newheader9 }}

@@ -1,0 +1,37 @@
+name: WoWo_main
+
+on:
+  schedule:
+    - cron: '5 14,16,0,4,8,10,12 * * * '
+  watch:
+    types: [started]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        
+      - name: 'Set up Python'
+        uses: actions/setup-python@v1
+        with:
+          python-version: 3.7
+         
+      - name: 'Install requirements'
+        run: pip install -r ./Wowonaitang/requirements.txt 
+        
+      - name: '公众号iosrule' 
+        run: python3 ./Wowonaitang/Wowo_main.py
+        env:
+            DJJ_BARK_COOKIE: ${{ secrets.DJJ_BARK_COOKIE }}
+            DJJ_SEVER_JIANG: ${{ secrets.DJJ_SEVER_JIANG }}
+            DJJ_TELE_COOKIE: ${{ secrets.DJJ_TELE_COOKIE }}
+            wowo_naitang_urlm0: ${{ secrets.wowo_naitang_urlm0 }}
+            wowo_naitang_ckm0: ${{ secrets.wowo_naitang_ckm0 }}
+            wowo_naitang_hd: ${{ secrets.wowo_naitang_hd }}
+            wowo_naitang_urlm1: ${{ secrets.wowo_naitang_urlm1 }}
+            wowo_naitang_ckm1: ${{ secrets.wowo_naitang_ckm1 }}
+            wowo_naitang_urlm2: ${{ secrets.wowo_naitang_urlm2 }}
+            wowo_naitang_ckm2: ${{ secrets.wowo_naitang_ckm2 }}
+            wowo_naitang_urlm3: ${{ secrets.wowo_naitang_urlm3 }}
+            wowo_naitang_ckm3: ${{ secrets.wowo_naitang_ckm3 }}
