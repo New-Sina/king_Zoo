@@ -3,7 +3,7 @@
 #女装盲盒
 #活动时间：2021-2-26至2021-3-8
 #活动地址https://anmp.jd.com/babelDiy/Zeus/3DSHPs2xC66RgcCEB8YVLsudqfh5/index.html
-#动入口：京东app-女装馆-赢京豆
+#动入口：京东app-女装馆-赢京豆 0 8 1-8/1,27,28 2,3 *
 
 name: 女装盲盒
 
@@ -12,7 +12,7 @@ on:
     #     branches:
     #         - main
     schedule:
-        - cron: "0 8 16,17,18,19,20,21,22,23,0 27,28 2,3 *"
+        - cron: "0 0 1-8/1,27,28 2,3 *"
     workflow_dispatch:
 jobs:
     build:
