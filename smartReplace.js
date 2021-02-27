@@ -191,6 +191,7 @@ async function downloader_jd() {
             "./jdSuperMarketShareCodes.js",
             "京小超互助码"
         );
+     }
     if (remoteContent.indexOf("jdFactoryShareCodes") > 0) {
         await download(
             "https://github.com/LXK9301/jd_scripts/raw/master/jdFactoryShareCodes.js",
