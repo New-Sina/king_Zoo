@@ -116,14 +116,14 @@ async function executeOneByOne() {
           
   } else if (SyncUrl.indexOf('jd_get_share_code')>0) 
   {
-     console.log(rcontent);
+     console.log(hideme(rcontent,0));
        } 
  else    
 
   {
          
-       console.log(hideme(rcontent));
-//console.log(rcontent);
+       console.log(hideme(rcontent,1));
+
      }
        
     }
@@ -179,18 +179,20 @@ else
 start();
 
 
-function hideme(st)
+function hideme(st,FLAG)
 {let fn1=""
 var zg =  /^[0-9a-zA-Z]*$/;
 
 for(let i=0;i<st.length;i++)
 {
-  if (zg.test(st[i])&&zg.test(st[i+1])&&zg.test(st[i+2])&&zg.test(st[i+3]))
+  if (FLAG==1){
+   
+   if (zg.test(st[i])&&zg.test(st[i+1])&&zg.test(st[i+2])&&zg.test(st[i+3]))
   {
    fn1=st.substr(st.indexOf(st[i]+st[i+1]+st[i+2]+st[i+3]+st[i+4]),5);
 st=st.replace(fn1,"*****");
   }
-  
+  }
 
 if (st[i]==("账"))
 {fn1=st.substr(i+2,5);
