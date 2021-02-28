@@ -1,0 +1,38 @@
+name: ludingji
+
+on:
+  schedule:
+    - cron: '*/30 * * * * '
+  watch:
+    types: [started]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        
+      - name: 'Set up Python'
+        uses: actions/setup-python@v1
+        with:
+          python-version: 3.7
+         
+      - name: 'Install requirements'
+        run: pip install -r ./Ludingji/requirements.txt 
+        
+      - name: '公众号iosrule' 
+        run: python3 ./Ludingji/ludingji.py 
+        env:
+            DJJ_BARK_COOKIE: ${{ secrets.DJJ_BARK_COOKIE }}
+            DJJ_SEVER_JIANG: ${{ secrets.DJJ_SEVER_JIANG }}
+            ludingji_url: ${{ secrets.ludingji_url }}
+            ludingji_tk: ${{ secrets.ludingji_tk }}
+            ludingji_token: ${{ secrets.ludingji_token }}
+            ludingji_fun0: ${{ secrets.ludingji_fun0 }}
+            ludingji_fun1: ${{ secrets.ludingji_fun1 }}
+            ludingji_fun2: ${{ secrets.ludingji_fun2 }}
+            ludingji_fun3: ${{ secrets.ludingji_fun3 }}
+            ludingji_fun4: ${{ secrets.ludingji_fun4 }}
+            ludingji_fun5: ${{ secrets.ludingji_fun5 }}
+            ludingji_fun6: ${{ secrets.ludingji_fun6 }}
+            ludingji_fun7: ${{ secrets.ludingji_fun7 }}
