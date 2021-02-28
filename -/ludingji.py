@@ -23,7 +23,7 @@ def ludingji(i,j,k):
        #print(response.text)
        if(k==8):
              res=json.dumps(response.text)
-             print(res)
+             #print(res)
              res=re.compile('(\d+.\d+)').findall(res)
              res=res[0]+'|'+res[1]+'|'+res[2]
              loger(res)
@@ -72,7 +72,7 @@ def pushmsg(title,txt,bflag=1,wflag=1):
       response = requests.post(purl,headers=headers,data=body)
     #print(response.text)
 def loger(m):
-   print(m)
+   #print(m)
    global result
    result +=m+'\n'                
 def notice(b,e):
