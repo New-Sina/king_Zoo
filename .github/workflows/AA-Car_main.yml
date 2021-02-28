@@ -23,8 +23,7 @@ jobs:
         run: python3 ./-/Car_main.py 
         env:
             DJJ_BARK_COOKIE: ${{ secrets.DJJ_BARK_COOKIE }}
-            TG_BOT_TOKEN: ${{ secrets.TG_BOT_TOKEN }}
-            TG_USER_ID: ${{ secrets.TG_USER_ID }}
+            DJJ_TELE_COOKIE: ${{ secrets.DJJ_TELE_COOKIE }}
             car_url: ${{ secrets.car_url }}
             car_hd: ${{ secrets.car_hd }}
             car_bt0: ${{ secrets.car_bt0 }}
