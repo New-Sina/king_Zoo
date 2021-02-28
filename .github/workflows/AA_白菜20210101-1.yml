@@ -28,6 +28,5 @@ jobs:
             bd_url: ${{ secrets.bd_url }}
             bd_bd: ${{ secrets.bd_bd }}
             bd_hd: ${{ secrets.bd_hd }}
-            bd_ck1: ${{ secrets.bd_ck1 }}
+            bd_ck: ${{ secrets.bd_ck }}
             bd_task: ${{ secrets.bd_task }}
-
