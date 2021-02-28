@@ -17,7 +17,7 @@ jobs:
           python-version: 3.7
          
       - name: 'Install requirements'
-        run: pip install -r ./-/白菜.txt 
+        run: pip install -r ./-/C.txt 
         
       - name: '公众号iosrule' 
         run: python3 ./-/BaiCai2.py 
@@ -27,5 +27,5 @@ jobs:
             bd_url: ${{ secrets.bd_url }}
             bd_bd: ${{ secrets.bd_bd }}
             bd_hd: ${{ secrets.bd_hd }}
-            bd_ck2: ${{ secrets.bd_ck2 }}
+            bd_ck: ${{ secrets.bd_ck }}
             bd_task: ${{ secrets.bd_task }}
