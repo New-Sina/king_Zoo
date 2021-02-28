@@ -17,7 +17,7 @@ jobs:
           python-version: 3.7
          
       - name: 'Install requirements'
-        run: pip install -r ./-/C.txt 
+        run: pip install -r ./-/C.TXT 
         
       - name: '公众号iosrule' 
         run: python3 ./-/BaiCai2.py 
