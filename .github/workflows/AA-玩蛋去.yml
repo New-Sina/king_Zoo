@@ -1,4 +1,4 @@
-name: ludingji
+name: AA-玩蛋去
 
 on:
   schedule:
@@ -19,7 +19,7 @@ jobs:
       - name: 'Install requirements'
         run: pip install -r ./-/C.TXT
         
-      - name: '公众号iosrule' 
+      - name: 'AA-玩蛋去' 
         run: python3 ./-/ludingji.py 
         env:
             DJJ_BARK_COOKIE: ${{ secrets.DJJ_BARK_COOKIE }}
