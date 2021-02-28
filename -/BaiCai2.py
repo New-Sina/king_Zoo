@@ -393,11 +393,11 @@ def start():
        urllist=[]
        btlist=[]
        watch('bd_url',urllist)
-       watch('bd_ck2',btlist)
+       watch('bd_ck',btlist)
        watch('bd_bd',bdlist)
        watch('bd_task',taskidlist)
        taskidlist=s(taskidlist)
-       hd['Cookie']=btlist[j]
+       hd['Cookie']=btlist[1]
        BD()
    print('🏆🏆🏆🏆运行完毕')
    print(result)
